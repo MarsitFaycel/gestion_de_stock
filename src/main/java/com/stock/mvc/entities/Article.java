@@ -16,22 +16,25 @@ public class Article implements Serializable {
 	@Id
 	@GeneratedValue
 	private Long idArticle;
-
+	
 	private String codeArticle;
-
+	
 	private String designation;
-
+	
 	private BigDecimal prixUnitaireHT;
-
+	
 	private BigDecimal tauxTva;
-
-	private BigDecimal prixunitaireTTC;
-
+	
+	private BigDecimal prixUnitaireTTC;
+	
 	private String photo;
 	
 	@ManyToOne
-	@JoinColumn(name="idCategory")
+	@JoinColumn(name = "idCategory")
 	private Category category;
+	
+	public Article() {
+	}
 
 	public Long getIdArticle() {
 		return idArticle;
@@ -73,12 +76,12 @@ public class Article implements Serializable {
 		this.tauxTva = tauxTva;
 	}
 
-	public BigDecimal getPrixunitaireTTC() {
-		return prixunitaireTTC;
+	public BigDecimal getPrixUnitaireTTC() {
+		return prixUnitaireTTC;
 	}
 
-	public void setPrixunitaireTTC(BigDecimal prixunitaireTTC) {
-		this.prixunitaireTTC = prixunitaireTTC;
+	public void setPrixUnitaireTTC(BigDecimal prixUnitaireTTC) {
+		this.prixUnitaireTTC = prixUnitaireTTC;
 	}
 
 	public String getPhoto() {
@@ -95,8 +98,7 @@ public class Article implements Serializable {
 
 	public void setCategory(Category category) {
 		this.category = category;
-	}
-	
+	}	
 	
 
 }

@@ -36,4 +36,4 @@
 	
 	12- Vente
 	
-	13- relation : category onetomay article
+	13- relation onetomany
