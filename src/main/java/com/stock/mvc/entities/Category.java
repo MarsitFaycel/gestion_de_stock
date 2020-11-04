@@ -1,23 +1,44 @@
 package com.stock.mvc.entities;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Category implements Serializable {
 	@Id
-	private Long id;
+	private Long idCategory;
 
-	public Long getId() {
-		return id;
+	private String code;
+
+	@OneToMany(mappedBy="category")
+	private List<Article> articles;
+
+	public Long getIdCategory() {
+		return idCategory;
 	}
 
-	public void setId(Long id) {
-		this.id = id;
+	public void setIdCategory(Long id) {
+		this.idCategory = id;
 	}
-	
-	
+
+	public String getCode() {
+		return code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public List<Article> getArticles() {
+		return articles;
+	}
+
+	public void setArticles(List<Article> articles) {
+		this.articles = articles;
+	}
 
 }
